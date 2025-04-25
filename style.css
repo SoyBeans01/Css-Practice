@@ -10,18 +10,33 @@ button:hover{
     cursor: pointer;
 }
 
+
 body{
-    background-image: url("images/road.jpg");
-    background-size:100% 100%;
-    background-attachment: fixed;
-    background-repeat: cover;
+    background-image: url("images/bear.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: img-scroll linear;
+    animation-timeline: scroll();
+}
+@keyframes img-scroll{
+    from{
+        background-position: center 0;
+    }
+    to{
+        background-position: center 1000px;
+    }
 }
 /* NAV */
 h2{
     margin: 1rem 1.5rem;
 }
+.nav-header{
+position: sticky;
+    top: 0;
+    z-index: 1;
+}
 nav{
-    position: sticky;
     color: white;
     background-color: #3b414d;
     height: 4rem;
@@ -77,9 +92,6 @@ nav{
     flex-wrap: wrap;
     justify-content: center;
     color: white;
-    
-}
-.hero img{
 }
 .title{
     font-size: 2.75rem;
@@ -92,12 +104,29 @@ nav{
     width: 62rem;
     text-align: center;
     text-shadow: 3px 3px #3b414d;
+    margin-bottom: 2rem;
+}
+.arrow-btn{
+    width: 100%;
+    text-align: center;
+}
+.arrow-btn button{
+    margin: 4rem;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 5rem;
+    transition: 0.25s;
+}
+.arrow-btn button:hover{
+    color: #2cb2ff;
 }
 
 /* MAIN CONTENT HEADER */
 .main-header{
-    background-color: #3b414d;
-    margin: 1rem 12rem 0rem 12rem;
+    width: calc(100% - 24rem);
+    margin: 0 auto;
+    background-color: hwb(220 24% 69% / 0.959);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -172,7 +201,14 @@ nav{
     background: none;
     border: #3b414d solid 2px;
     padding: 1rem 2rem;
+    transition: 0.25s;
+    margin-bottom: 8rem;
 }
+.content header button:hover{
+    border-color: #2cb2ff;
+    color: #2cb2ff;
+}
+
 
 /* FOOTER */
 footer{
@@ -184,4 +220,13 @@ footer{
 }
 footer p{
     color: hsl(0, 0%, 50%);
+}
+
+@media screen and (max-width: 1460px){
+    *{
+        font-size: 1rem;
+    }
+    .headline{
+        font-size: 0.5rem;
+    }
 }
